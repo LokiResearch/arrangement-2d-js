@@ -75,7 +75,7 @@ set_target_properties(esm
     ADDITIONAL_CLEAN_FILES "wrapper.cpp;glue.cpp;glue.js;${MODULE_NAME}.wasm"
     OUTPUT_NAME ${MODULE_NAME}.esm
     SUFFIX ".js"
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
     CFLAGS "-O3"
     LINK_FLAGS "\
       -s WASM=1 \
@@ -99,7 +99,7 @@ set_target_properties(umd
     ADDITIONAL_CLEAN_FILES "wrapper.cpp;glue.cpp;glue.js;${MODULE_NAME}.wasm"
     OUTPUT_NAME ${MODULE_NAME}.umd
     SUFFIX ".js"
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
     CFLAGS "-O3"
     LINK_FLAGS "\
       -s WASM=1 \
