@@ -11,10 +11,11 @@ if (NOT DEFINED ENV{EMSDK})
     return()
 endif()
 
+find_package(Python3)
 # Setup some paths
+set(PYTHON ${Python3_EXECUTABLE})
 set(EMSCRIPTEN_ROOT $ENV{EMSDK}/upstream/emscripten)
 set(WEBIDL_BINDER ${EMSCRIPTEN_ROOT}/tools/webidl_binder.py)
-set(PYTHON $ENV{EMSDK_PYTHON})
 set(WEBIDL_INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/src/arrangement2d.idl)
 set(WEBIDL_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/src/arrangement2d.h)
 set(MODULE_NAME Arrangement2D)
