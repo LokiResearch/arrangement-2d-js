@@ -8,13 +8,14 @@
     "email": "ax.antoine@gmail.com",
     "url": "https://axantoine.com"
   },
-  "main": "build/Arrangement2D.cjs",
-  "module": "build/Arrangement2D.js",
+  "main": "build/Arrangement2D.umd.js",
+  "module": "build/Arrangement2D.esm.js",
+  "types": "build/Arrangement2D.esm.d.ts",
   "scripts": {
     "clean": "rm -rf build build-examples",
     "build": "emcmake cmake -B build && emmake make -C build",
     "build-examples": "rollup -c --environment examples",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test": "jest",
     "lint": "eslint src demo",
     "prepublishOnly": "npm run build"
   },

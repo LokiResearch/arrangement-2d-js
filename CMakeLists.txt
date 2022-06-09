@@ -19,7 +19,7 @@ set(WEBIDL_BINDER ${EMSCRIPTEN_ROOT}/tools/webidl_binder.py)
 set(WEBIDL_INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/src/arrangement2d.idl)
 set(WEBIDL_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/src/arrangement2d.h)
 set(MODULE_NAME Arrangement2D)
-set(TS_DEF_MOD_FILE ${MODULE_NAME}.module.d.ts)
+set(TS_DEF_MOD_FILE ${MODULE_NAME}.esm.d.ts)
 set(TS_DEF_UMD_FILE ${MODULE_NAME}.umd.d.ts)
 
 # Include cgal and boost headers
@@ -66,14 +66,14 @@ add_custom_command(
 
 # As we are using the same sources files for multiple targets, we build a
 # temporary object library that will be included in the final emcc command
-add_library(common-code OBJECT ${CPP_FILES} ${C_FILES} wrapper.cpp)
+add_library(common-objects OBJECT ${CPP_FILES} ${C_FILES} wrapper.cpp)
 
 # Emscripten compilation and linking options
-add_executable(js-module $<TARGET_OBJECTS:common-code> ${TS_DEF_MOD_FILE})
-set_target_properties(js-module
+add_executable(esm $<TARGET_OBJECTS:common-objects> ${TS_DEF_MOD_FILE})
+set_target_properties(esm
     PROPERTIES
     ADDITIONAL_CLEAN_FILES "wrapper.cpp;glue.cpp;glue.js;${MODULE_NAME}.wasm"
-    OUTPUT_NAME ${MODULE_NAME}.module
+    OUTPUT_NAME ${MODULE_NAME}.esm
     SUFFIX ".js"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
     CFLAGS "-O3"
@@ -93,8 +93,8 @@ set_target_properties(js-module
     "
 )
 
-add_executable(js-umd $<TARGET_OBJECTS:common-code> ${TS_DEF_UMD_FILE})
-set_target_properties(js-umd
+add_executable(umd $<TARGET_OBJECTS:common-objects> ${TS_DEF_UMD_FILE})
+set_target_properties(umd
     PROPERTIES
     ADDITIONAL_CLEAN_FILES "wrapper.cpp;glue.cpp;glue.js;${MODULE_NAME}.wasm"
     OUTPUT_NAME ${MODULE_NAME}.umd
@@ -114,49 +114,3 @@ set_target_properties(js-umd
       --post-js ${CMAKE_BINARY_DIR}/glue.js \
     "
 )
-
-
-# # Emscripten compilation and linking options
-# add_executable(js-module wrapper.cpp ${CPP_FILES} ${C_FILES} ${TS_DEF_FILE})
-# set_target_properties(js-module
-#     PROPERTIES
-#     ADDITIONAL_CLEAN_FILES "wrapper.cpp;glue.cpp;glue.js;${MODULE_NAME}.wasm"
-#     OUTPUT_NAME ${MODULE_NAME}
-#     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
-#     CFLAGS "-O3"
-#     LINK_FLAGS "\
-#       -s WASM=1 \
-#       -s EXPORT_ES6=1 \
-#       -s MODULARIZE=1 \
-#       -s SINGLE_FILE=1 \
-#       -s USE_ES6_IMPORT_META=1 \
-#       -s ALLOW_MEMORY_GROWTH=1 \
-#       -s ASSERTIONS \
-#       -s NO_EXIT_RUNTIME=1 \
-#       -s NO_FILESYSTEM=1 \
-#       -s EXPORT_NAME=${MODULE_NAME} \
-#       -s DEMANGLE_SUPPORT=1 \
-#       --post-js ${CMAKE_BINARY_DIR}/glue.js \
-#     "
-# )
-
-# add_executable(js-umd wrapper.cpp ${CPP_FILES} ${C_FILES} ${TS_DEF_FILE})
-# set_target_properties(js-umd
-#     PROPERTIES
-#     ADDITIONAL_CLEAN_FILES "wrapper.cpp;glue.cpp;glue.js;${MODULE_NAME}.wasm"
-#     OUTPUT_NAME ${MODULE_NAME}.umd
-#     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
-#     CFLAGS "-O3"
-#     LINK_FLAGS "\
-#       -s WASM=1 \
-#       -s MODULARIZE=1 \
-#       -s SINGLE_FILE=1 \
-#       -s ALLOW_MEMORY_GROWTH=1 \
-#       -s ASSERTIONS \
-#       -s NO_EXIT_RUNTIME=1 \
-#       -s NO_FILESYSTEM=1 \
-#       -s EXPORT_NAME=${MODULE_NAME} \
-#       -s DEMANGLE_SUPPORT=1 \
-#       --post-js ${CMAKE_BINARY_DIR}/glue.js \
-#     "
-# )
