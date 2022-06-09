@@ -56,7 +56,7 @@ jobs:
       uses: EndBug/add-and-commit@v7
       with:
         message: '[auto] update build files'
-        add: build/Arrangement2D.*
+        add: build/Arrangement2D.* --force
 
     - name: Build examples
       run: npm run build-examples
