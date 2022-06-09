@@ -1,0 +1,51 @@
+interface ArrangementBuilder {
+  void ArrangementBuilder();
+  [Const] PolygonList getPolygons( [Const, Ref] PointList points);
+};
+
+interface Point {
+  void Point();
+  void Point(double x, double y);
+  attribute double x;
+  attribute double y;
+};
+
+interface Polygon {
+  void Polygon([Const, Ref] Contour contour, [Const, Ref] ContourList holes);
+  boolean getInsidePoint([Ref] Point point);
+  double getPolyTristripArea();
+  [Value] attribute Contour contour;
+  [Value] attribute ContourList holes;
+};
+
+interface PointList {
+  void PointList();
+  void push_back([Const, Ref] Point s);
+  long size();
+  [Operator="[]", Const, Ref] Point at(long i);
+  void clear();
+};
+
+interface PolygonList {
+  void PolygonList();
+  void push_back(Polygon s);
+  long size();
+  [Operator="[]", Const] Polygon at(long i);
+  void clear();
+};
+
+interface Contour {
+  void Contour();
+  void push_back([Const, Ref] Point s);
+  long size();
+  [Operator="[]", Const, Ref] Point at(long i);
+  void clear();
+};
+
+interface ContourList {
+  void ContourList();
+  void push_back([Const, Ref] Contour s);
+  long size();
+  [Operator="[]", Const, Ref] Contour at(long i);
+  void clear();
+};
