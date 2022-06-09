@@ -22,7 +22,7 @@ jobs:
       uses: mymindstorm/setup-emsdk@v11
       with:
         version: "latest"
-        actions-cache-folder: '../emsdk-cache'
+        actions-cache-folder: 'emsdk-cache'
 
     - name: Verify Emscripten
       run: emcc -v
