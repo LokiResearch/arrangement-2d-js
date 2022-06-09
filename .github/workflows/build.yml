@@ -22,13 +22,10 @@ jobs:
       uses: mymindstorm/setup-emsdk@v11
       with:
         version: "latest"
-        actions-cache-folder: 'emsdk-cache'
+        actions-cache-folder: '../emsdk-cache'
 
     - name: Verify Emscripten
       run: emcc -v
-
-    - run: ls -l
-    - run: chmod 777 emsdk-cache
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
