@@ -33,6 +33,7 @@ jobs:
         cache: 'npm'
 
     - name: Setup Libraries
+      run: sudo apt-get install -y pv
       run: ./install_libraries.sh
 
     - run: npm ci
