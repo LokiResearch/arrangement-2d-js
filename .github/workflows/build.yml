@@ -33,19 +33,19 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - name: Download C++ Libraries
+    - name: Cache C++ Libs downloads
       uses: actions/cache@v2
-      run: ./install_libraries.sh
       with:
         path: libraries/downloads
         key: c-libs-${{ hashFiles('package-lock.json') }}
 
-    - name: Cache dependencies
+    - name: Cache npm modules
       uses: actions/cache@v2
       with:
         path: ~/.npm
         key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
 
+    - run: ./install_libraries.sh
     - run: npm ci
     - run: npm run build
     # - run: npm run lint
