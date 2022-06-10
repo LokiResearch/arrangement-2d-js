@@ -13,7 +13,6 @@ const examples_cfg = [
   plugins: [
     typescript({
       tsconfig: './tsconfig.json',
-      include: ["./examples"]
     }),
     nodeResolve(),
     htmlTemplate({

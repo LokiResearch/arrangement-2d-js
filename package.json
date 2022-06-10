@@ -19,18 +19,12 @@
     "lint": "eslint src demo",
     "prepublishOnly": "npm run build"
   },
-  "files": [
-    "build/Arrangement2D.js",
-    "build/arrangement-2d.wasm"
-  ],
-  "dependencies": {
-    "@rollup/plugin-typescript": "^8.3.2",
-    "rollup": "^2.75.4"
-  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@types/jest": "^27.5.1",
     "jest": "^28.1.0",
+    "rollup": "^2.75.6",
     "rollup-plugin-generate-html-template": "^1.7.0",
     "ts-jest": "^28.0.3",
     "tslib": "^2.4.0",
