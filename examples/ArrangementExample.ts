@@ -149,5 +149,6 @@ Arrangement2D().then((Arr2D) => {
     Arr2D.destroy(polygonList.at(i));
   }
   Arr2D.destroy(polygonList);
+  Arr2D.destroy(builder);
 
 });
