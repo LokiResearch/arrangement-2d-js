@@ -61,9 +61,13 @@ describe("Test the arrangement", () => {
     points.push_back(new Arr2D.Point(0, 4));
 
     const builder = new Arr2D.ArrangementBuilder();
-    const regions = builder.getPolygons(points);
+    const polygons = builder.getPolygons(points);
 
-    expect(regions.size()).toBe(1);
+    expect(polygons.size()).toBe(1);
+
+    const poly = polygons.at(0);
+
+    expect(poly.contour.size()).toBe(3);
 
   });
 
