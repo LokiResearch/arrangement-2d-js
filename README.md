@@ -6,7 +6,7 @@
 
 ## Examples
 
-- Complexe Arrangement [Demo Link](https://minitoine.github.io/arrangement-2d-js/build-examples/ArrangementExample)
+- Arrangement demo [Link](https://minitoine.github.io/arrangement-2d-js/build-examples/ArrangementExample)
 
 ## Install
 
