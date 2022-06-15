@@ -1,5 +1,5 @@
 {
-  "name": "arrangement-2d",
+  "name": "arrangement-2d-js",
   "version": "1.0.0",
   "description": "CGAL 2D Arrangement package example",
   "type": "module",
