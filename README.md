@@ -1,8 +1,9 @@
 # arrangement-2d-js
 
 [![build](https://github.com/LokiResearch/arrangement-2d-js/workflows/build/badge.svg)](https://github.com/LokiResearch/arrangement-2d-js/actions?query=workflow:"build")
-[![GitHub tag](https://img.shields.io/github/tag/LokiResearch/arrangement-2d-js?include_prereleases=&sort=semver&color=blue)](https://github.com/LokiResearch/arrangement-2d-js/releases/)
+[![GitHub release](https://img.shields.io/github/release/LokiResearch/three-mesh-halfedge?include_prereleases=&sort=semver&color=blue)](https://github.com/LokiResearch/three-mesh-halfedge/releases/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/LokiResearch/arrangement-2d-js.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/minitoine/arrangement-2d-js/context:javascript)
+[![License](https://img.shields.io/badge/License-MIT-green)](#license)
 
 ## Examples
 
