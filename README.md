@@ -1,19 +1,19 @@
 # arrangement-2d-js
 
-[![build](https://github.com/minitoine/arrangement-2d-js/workflows/build/badge.svg)](https://github.com/minitoine/arrangement-2d-js/actions?query=workflow:"build")
-[![GitHub tag](https://img.shields.io/github/tag/minitoine/arrangement-2d-js?include_prereleases=&sort=semver&color=blue)](https://github.com/minitoine/arrangement-2d-js/releases/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/minitoine/arrangement-2d-js.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/minitoine/arrangement-2d-js/context:javascript)
+[![build](https://github.com/LokiResearch/arrangement-2d-js/workflows/build/badge.svg)](https://github.com/LokiResearch/arrangement-2d-js/actions?query=workflow:"build")
+[![GitHub tag](https://img.shields.io/github/tag/LokiResearch/arrangement-2d-js?include_prereleases=&sort=semver&color=blue)](https://github.com/LokiResearch/arrangement-2d-js/releases/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/LokiResearch/arrangement-2d-js.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/minitoine/arrangement-2d-js/context:javascript)
 
 ## Examples
 
-- Arrangement demo [Link](https://minitoine.github.io/arrangement-2d-js/build-examples/ArrangementExample)
+- Arrangement demo [Link](https://LokiResearch.github.io/arrangement-2d-js/build-examples/ArrangementExample)
 
 ## Install
 
 ### From GitHub
 
 ```bash
-npm i git+https://github.com/minitoine/arrangement-2d-js.git
+npm i git+https://github.com/LokiResearch/arrangement-2d-js.git
 ```
 
 
