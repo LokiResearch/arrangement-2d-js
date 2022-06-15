@@ -17,6 +17,38 @@
 npm i git+https://github.com/LokiResearch/arrangement-2d-js.git
 ```
 
+## Build
+
+##### Install and configure Emscripten
+```bash
+# Get the emscripten repo 
+git clone git@github.com:emscripten-core/emsdk.git
+
+# Enter folder
+cd emsdk
+
+# Download the SDK tool (latest or another version)
+./emsdk install latest
+
+# Activate the downloaded SDK
+./emsdk activate latest
+
+# Add Emscripten env to PATH
+source ./emsdk_env.sh
+```
+
+##### Install and build arrangement-2d-js
+```bash
+# Get this repo
+git clone git@github.com:LokiResearch/arrangement-2d-js.git
+
+# Install CGAL and boost libraries
+./install_libraries.sh
+
+# Build
+npm run build
+```
+
 
 ## Use
 
